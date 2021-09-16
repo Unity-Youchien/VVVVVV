@@ -6,3 +6,6 @@ https://youtu.be/8qscVnMAzk4
 
 ②Tilemapでステージの作成
 https://youtu.be/5EKdqXAE1Q8
+
+③Playerの作成
+https://youtu.be/dP8ryQnhyXE
