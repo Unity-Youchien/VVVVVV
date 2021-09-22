@@ -12,3 +12,6 @@ https://youtu.be/dP8ryQnhyXE
 
 ④ステージの当たり判定
 https://youtu.be/6EzHM6KeEhY
+
+⑤Playerの移動
+https://youtu.be/hV0ucNwDQ4Y
