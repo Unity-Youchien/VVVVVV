@@ -41,6 +41,13 @@ public class PlayerManager : MonoBehaviour
             // 左に移動
             direction = DIRECTION_TYPE.LEFT;
         }
+
+        // スペースを押したらジャンプする
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            // ジャンプする
+            Jump();
+        }
     }
 
     private void FixedUpdate()
@@ -54,14 +61,23 @@ public class PlayerManager : MonoBehaviour
 
             case DIRECTION_TYPE.RIGHT:
                 speed = 3;
-                transform.localScale = new Vector3(1, 1, 1);
+                transform.localScale = new Vector3(1, transform.localScale.y, 1);
                 break;
 
             case DIRECTION_TYPE.LEFT:
                 speed = -3;
-                transform.localScale = new Vector3(-1, 1, 1);
+                transform.localScale = new Vector3(-1, transform.localScale.y, 1);
                 break;
         }
         rb.velocity = new Vector2(speed, rb.velocity.y);
+    }
+
+    void Jump()
+    {
+        // キャラを上下反転させる
+        transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, 1);
+
+        // 重力を逆にする
+        rb.gravityScale = -rb.gravityScale;
     }
 }
