@@ -15,3 +15,6 @@ https://youtu.be/6EzHM6KeEhY
 
 ⑤Playerの移動
 https://youtu.be/hV0ucNwDQ4Y
+
+⑥重力の反転
+https://youtu.be/A8MUyjqXEMA
