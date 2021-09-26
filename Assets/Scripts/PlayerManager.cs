@@ -15,6 +15,8 @@ public class PlayerManager : MonoBehaviour
     Rigidbody2D rb;
     float speed;
 
+    bool isGround;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -43,7 +45,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         // スペースを押したらジャンプする
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isGround)
         {
             // ジャンプする
             Jump();
@@ -79,5 +81,32 @@ public class PlayerManager : MonoBehaviour
 
         // 重力を逆にする
         rb.gravityScale = -rb.gravityScale;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            // 地面に触れているかどうか
+            isGround = true;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            // 地面に触れているかどうか
+            isGround = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            // 地面に触れているかどうか
+            isGround = false;
+        }
     }
 }

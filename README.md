@@ -18,3 +18,6 @@ https://youtu.be/hV0ucNwDQ4Y
 
 ⑥重力の反転
 https://youtu.be/A8MUyjqXEMA
+
+⑦地面判定
+https://youtu.be/x_rpXnf4nAY
