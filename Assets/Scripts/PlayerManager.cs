@@ -90,6 +90,11 @@ public class PlayerManager : MonoBehaviour
             // 地面に触れているかどうか
             isGround = true;
         }
+
+        if (collision.gameObject.tag == "Trap")
+        {
+            Debug.Log("トラップだ！");
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)

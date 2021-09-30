@@ -21,3 +21,6 @@ https://youtu.be/A8MUyjqXEMA
 
 ⑦地面判定
 https://youtu.be/x_rpXnf4nAY
+
+⑧ステージギミック
+https://youtu.be/H6DVy7SYNrQ
