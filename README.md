@@ -24,3 +24,6 @@ https://youtu.be/x_rpXnf4nAY
 
 ⑧ステージギミック
 https://youtu.be/H6DVy7SYNrQ
+
+⑨Tilemapの当たり判定修正
+https://youtu.be/vXA2qnk0ZNU
