@@ -16,10 +16,12 @@ public class PlayerManager : MonoBehaviour
     float speed;
 
     bool isGround;
+    SpriteRenderer spriteRenderer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // 不定期に何度も呼ばれる
@@ -93,7 +95,8 @@ public class PlayerManager : MonoBehaviour
 
         if (collision.gameObject.tag == "Trap")
         {
-            Debug.Log("トラップだ！");
+            StartCoroutine(GameOver());
+           // Debug.Log("トラップだ！");
         }
     }
 
@@ -113,5 +116,24 @@ public class PlayerManager : MonoBehaviour
             // 地面に触れているかどうか
             isGround = false;
         }
+    }
+
+    IEnumerator GameOver()
+    {
+        // 点滅させる：色は赤
+        int count = 0;
+        while (count < 10)
+        {
+            // 消える
+            spriteRenderer.color = new Color32(255, 120, 120, 100);
+            yield return new WaitForSeconds(0.05f); // 0.05秒待つ
+            // つく
+            spriteRenderer.color = new Color32(255, 120, 120, 255);
+            yield return new WaitForSeconds(0.05f); // 0.05秒待つ
+
+            count++;
+        }
+
+        // リスタートさせる
     }
 }
