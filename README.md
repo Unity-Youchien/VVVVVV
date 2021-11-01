@@ -30,3 +30,6 @@ https://youtu.be/vXA2qnk0ZNU
 
 ⑩Playerの点滅
 https://youtu.be/HnlhjwA8bvg
+
+11.トラップに当たった時の移動制限
+https://youtu.be/rIeaFdOKmcE

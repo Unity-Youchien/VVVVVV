@@ -18,6 +18,8 @@ public class PlayerManager : MonoBehaviour
     bool isGround;
     SpriteRenderer spriteRenderer;
 
+    bool isDead;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -29,28 +31,31 @@ public class PlayerManager : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
 
-        // 移動する方向を決める
-        if (x == 0)
+        if (!isDead)
         {
-            // 止まってる
-            direction = DIRECTION_TYPE.STOP;
-        }
-        else if (x > 0)
-        {
-            // 右に移動
-            direction = DIRECTION_TYPE.RIGHT;
-        }
-        else if (x < 0)
-        {
-            // 左に移動
-            direction = DIRECTION_TYPE.LEFT;
-        }
+            // 移動する方向を決める
+            if (x == 0)
+            {
+                // 止まってる
+                direction = DIRECTION_TYPE.STOP;
+            }
+            else if (x > 0)
+            {
+                // 右に移動
+                direction = DIRECTION_TYPE.RIGHT;
+            }
+            else if (x < 0)
+            {
+                // 左に移動
+                direction = DIRECTION_TYPE.LEFT;
+            }
 
-        // スペースを押したらジャンプする
-        if (Input.GetKeyDown(KeyCode.Space) && isGround)
-        {
-            // ジャンプする
-            Jump();
+            // スペースを押したらジャンプする
+            if (Input.GetKeyDown(KeyCode.Space) && isGround)
+            {
+                // ジャンプする
+                Jump();
+            }
         }
     }
 
@@ -95,6 +100,7 @@ public class PlayerManager : MonoBehaviour
 
         if (collision.gameObject.tag == "Trap")
         {
+            isDead = true;
             StartCoroutine(GameOver());
            // Debug.Log("トラップだ！");
         }
@@ -120,6 +126,11 @@ public class PlayerManager : MonoBehaviour
 
     IEnumerator GameOver()
     {
+        // 動きを止める
+        direction = DIRECTION_TYPE.STOP;
+        rb.gravityScale = 0;
+        rb.velocity = Vector2.zero;
+
         // 点滅させる：色は赤
         int count = 0;
         while (count < 10)
