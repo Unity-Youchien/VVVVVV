@@ -20,6 +20,8 @@ public class PlayerManager : MonoBehaviour
 
     bool isDead;
 
+    [SerializeField] GameManager gm;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -146,5 +148,6 @@ public class PlayerManager : MonoBehaviour
         }
 
         // リスタートさせる
+        gm.GameOver();
     }
 }

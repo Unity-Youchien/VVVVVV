@@ -33,3 +33,6 @@ https://youtu.be/HnlhjwA8bvg
 
 11.トラップに当たった時の移動制限
 https://youtu.be/rIeaFdOKmcE
+
+12.リスタートの実装
+https://youtu.be/giRRWMUaadA
