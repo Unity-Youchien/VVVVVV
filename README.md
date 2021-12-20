@@ -36,3 +36,6 @@ https://youtu.be/rIeaFdOKmcE
 
 12.リスタートの実装
 https://youtu.be/giRRWMUaadA
+
+13.跳ね返る壁の実装
+https://youtu.be/WRbcWEjCbRY
