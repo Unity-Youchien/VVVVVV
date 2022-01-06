@@ -85,6 +85,7 @@ public class PlayerManager : MonoBehaviour
 
     void Jump()
     {
+        rb.velocity = Vector2.zero;
         // キャラを上下反転させる
         transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, 1);
 
@@ -105,6 +106,11 @@ public class PlayerManager : MonoBehaviour
             isDead = true;
             StartCoroutine(GameOver());
            // Debug.Log("トラップだ！");
+        }
+
+        if (collision.gameObject.tag == "BounceBar")
+        {
+            Jump();
         }
     }
 
